@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&family=Sedgwick+Ave&family=Vazirmatn:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+
+<!-- <div
+  style="
+    display: block;
+    width: 100%;
+    direction: ltr !important;
+    text-align: left;
+  "
+>
+  <div v-for="(category, i) in amir.categories" :key="i">
+    <span v-html="category.title"></span>
+    <div>
+      <div v-for="(item, j) in category.items" :key="j">
+        <input type="text" v-model="item.count" />
+        <input type="text" v-model="item.brand" />
+        <input type="text" v-model="item.suggestBrand" />
+        <select v-if="category.attrItems.length" v-model="item.attr">
+          <option
+            v-html="op.title"
+            :value="op.id"
+            v-for="(op, k) in category.attrItems"
+            :key="k"
+          ></option>
+        </select>
+      </div>
+      <span @click="addItem(category)">add</span>
+    </div>
+  </div>
+</div> -->
