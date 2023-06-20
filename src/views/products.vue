@@ -1,10 +1,10 @@
 <template>
   <main>
-    <div class="login-container" v-if="!toggleLoginSection">
+    <div class="login-container" v-if="toggleLoginSection">
       <div class="flex">
         <h2>اطلاعات اصلی</h2>
       </div>
-      <!-- <form>
+      <form>
         <div class="input-label-container">
           <label class="login-label" for="username">نام </label>
           <input
@@ -26,233 +26,421 @@
           />
         </div>
         <div class="input-label-container">
-          <label class="login-label" for="password">موبایل </label>
+          <label class="login-label" for="mobile">موبایل </label>
           <input
             class="login-input"
-            type="password"
-            id="password"
-            name="password"
+            type="mobile"
+            id="mobile"
+            name="mobile"
             required
           />
         </div>
         <div class="input-label-container">
-          <label class="login-label" for="password">مرکز </label>
+          <!-- <label class="login-label" for="or">مرکز </label>
           <input
             class="login-input"
-            type="password"
-            id="password"
-            name="password"
+            type="or"
+            id="or"
+            name="or"
             required
-          />
+          /> -->
         </div>
         <input type="submit" value="ورود" @click="toggleActive" />
-      </form> -->
+      </form>
     </div>
     <div v-if="toggleLoginSection">
-      <h1>محصولات</h1>
+      <!-- <h1>محصولات</h1> -->
       <div class="products-container">
         <!-- PRODUCT-SECTION -->
 
-        <div class="product">
-          <div class="product-card-header">
-            <div class="product-card-header-title">
-              <span
-                style="
-                  font-weight: bolder;
-                  font-size: 1.1rem;
-                  padding-bottom: 0.4rem;
-                "
-                >مداد شمعی
-              </span>
-            </div>
-            <div class="product-card-header-btn-container">
-              <button
-                class="products-btn products-btn-add"
-                id="pr-btn"
-                @click="toggleProduct"
-              >
-                <i class="fa fa-chevron-down"></i>
-              </button>
-            </div>
-          </div>
-          <Transition name="fade">
-            <div
-              class="product-content"
-              v-if="toggleProductsSection"
-              id="product"
-            >
-              <div class="products-input-container">
-                <label class="" for="count">تعداد </label>
-                <button class="products-btn btn-green" @click="incVal">
-                  <i class="fa fa-plus"></i>
-                </button>
-                <input
-                  v-model="count"
-                  class="products-input"
-                  style="text-align: center"
-                  type="count"
-                  id="count"
-                  name="count"
-                  required
-                />
-                <button class="products-btn btn-red" @click="decVal">
-                  <i class="fa fa-minus"></i>
-                </button>
-              </div>
-              <div class="products-input-container">
-                <label class="" for="brand">برند </label>
-                <select
-                  name="cars"
-                  id="brand"
-                  style="
-                    width: 30%;
-                    font-weight: 800;
-                    font-size: 1rem;
-                    margin-left: 5rem;
-                    border: none;
-                  "
-                >
-                  <option value="volvo">برند 1</option>
-                  <option value="saab">برند 2</option>
-                  <option value="opel">برند 3</option>
-                  <option value="audi">برند 4</option>
-                </select>
-              </div>
-              <div class="products-input-container">
-                <label class="" for="suggestBrand">برند پیشنهادی </label>
-                <input
-                  class="products-input"
-                  type="suggestBrand"
-                  id="suggestBrand"
-                  name="suggestBrand"
-                  required
-                  style="margin-left: 3.6rem"
-                />
-              </div>
-              <div class="products-input-container">
-                <label for="extra-info">توضیحات </label>
-                <textarea
-                  rows="2"
-                  cols="30"
-                  maxlength="200"
-                  id="extra-info"
-                  class="products-input"
-                ></textarea>
-              </div>
-            </div>
-          </Transition>
-        </div>
-
-        <div class="product">
-          <!-- <div class="product-card-header">
-            <div><span>مداد شمعی </span></div>
-            <div>
-              <button class="products-btn" id="pr-btn" @click="toggleProduct()">
-                <i class="fa fa-chevron-down"></i>
-              </button>
-            </div>
-          </div> -->
-          <!--          <Transition name="fade">
-          <div
-            class="product-content"
-            id="product"
-            v-if="toggleProductsSection"
-          >
- <div class="products-input-container">
-                             <label class="" for="count">تعداد </label>-->
-          <!--                <button class="products-btn btn-green" onclick="incVal()">-->
-          <!--                  <i class="fa fa-plus"></i>-->
-          <!--                </button>-->
-          <!--                <input value="0" class="products-input" style="text-align: center" type="count" id="count" name="count"-->
-          <!--                  required />-->
-          <!--                <button class="products-btn btn-red" onclick="decVal()">-->
-          <!--                  <i class="fa fa-minus"></i>-->
-          <!--                </button>
-              <form>
-                <div class="input-label-container">
-                  <label class="login-label" for="username">نام </label>
-                  <input
-                    class="login-input"
-                    type="text"
-                    id="username"
-                    name="username"
-                    required
-                  />
-                </div>
-                <div class="input-label-container">
-                  <label class="login-label" for="password"
-                    >نام خانوادگی
-                  </label>
-                  <input
-                    class="login-input"
-                    type="password"
-                    id="password"
-                    name="password"
-                    required
-                  />
-                </div>
-              </form>
-            </div> -->
-
-          <!--              <form>-->
-          <!--                <div class="input-label-container">-->
-          <!--                  <label class="login-label" for="username">نام </label>-->
-          <!--                  <input class="login-input" type="text" id="username" name="username" required />-->
-          <!--                </div>-->
-          <!--                <div class="input-label-container">-->
-          <!--                  <label class="login-label" for="password">نام خانوادگی </label>-->
-          <!--                  <input class="login-input" type="password" id="password" name="password" required />-->
-          <!--                </div>-->
-          <!--              </form>-->
-
-          <!--              <div class="products-input-container">-->
-          <!--                <label class="" for="brand">برند </label>-->
-          <!--                <select name="cars" id="brand" style="-->
-          <!--                width: 30%;-->
-          <!--                font-weight: 800;-->
-          <!--                font-size: 1rem;-->
-          <!--                margin-left: 5rem;-->
-          <!--                border: none;-->
-          <!--              ">-->
-          <!--                  <option value="volvo">برند 1</option>-->
-          <!--                  <option value="saab">برند 2</option>-->
-          <!--                  <option value="opel">برند 3</option>-->
-          <!--                  <option value="audi">برند 4</option>-->
-          <!--                </select>-->
-          <!--              </div>-->
-          <!--              <div class="products-input-container">-->
-          <!--                <label class="" for="suggestBrand">برند پیشنهادی </label>-->
-          <!--                <input class="products-input" type="suggestBrand" id="suggestBrand" name="suggestBrand" required-->
-          <!--                  style="margin-left: 3.6rem" />-->
-          <!--              </div>-->
-          <!--              <div class="products-input-container">-->
-          <!--                <label for="extra-info">توضیحات </label>-->
-          <!--                <textarea rows="2" cols="30" maxlength="200" id="extra-info" class="products-input"></textarea>-->
-          <!--              </div>-->
-          <!-- </div> -->
-          <!--          </Transition>-->
-        </div>
+        <!--      -->
       </div>
     </div>
-    <input v-if="toggleLoginSection" type="submit" value="ثبت خرید" />
+    <input
+      v-if="!toggleLoginSection"
+      class="footer-button"
+      type="submit"
+      value="ثبت خرید"
+    />
   </main>
 </template>
 <script setup>
-import { ref } from "vue";
-
+import { ref, onMounted } from "vue";
+import axios from "axios";
+// const axios = require("axios");
 const toggleLoginSection = ref(true);
 const toggleProductsSection = ref(false);
-const prEl = ref(null);
 const count = ref(0);
 
-const productEl = document.getElementById("product");
+const mockData = {
+  success: true,
+  brands: [
+    {
+      id: 31,
+      user_id: "1",
+      slug: "arya",
+      title: "\u0622\u0631\u06cc\u0627",
+      thumbnail: null,
+      post_type: "brands",
+      status: "1",
+      published_at: null,
+      deleted_at: null,
+      created_at: "2022-05-24T00:36:07.000000Z",
+      updated_at: "2022-05-24T00:36:07.000000Z",
+      href: "\/brands\/arya",
+      thumbnailUrl: null,
+      translates: [
+        {
+          post_id: "31",
+          lang: "fa",
+          title: "\u0622\u0631\u06cc\u0627",
+        },
+      ],
+      thumbnail_attachment: null,
+    },
+    {
+      id: 468,
+      user_id: "1",
+      slug: "arzhang",
+      title: "\u0627\u0631\u0698\u0646\u06af",
+      thumbnail: null,
+      post_type: "brands",
+      status: "1",
+      published_at: "2022-06-29 22:07:14",
+      deleted_at: null,
+      created_at: "2022-05-24T00:36:12.000000Z",
+      updated_at: "2022-06-29T22:07:14.000000Z",
+      href: "\/brands\/arzhang",
+      thumbnailUrl: null,
+      translates: [
+        {
+          post_id: "468",
+          lang: "fa",
+          title: "\u0627\u0631\u0698\u0646\u06af",
+        },
+      ],
+      thumbnail_attachment: null,
+    },
+    {
+      id: 735,
+      user_id: "1",
+      slug: "palmo",
+      title: "\u067e\u0627\u0644\u0645\u0648",
+      thumbnail: null,
+      post_type: "brands",
+      status: "1",
+      published_at: null,
+      deleted_at: null,
+      created_at: "2022-05-24T00:36:15.000000Z",
+      updated_at: "2022-05-24T00:36:15.000000Z",
+      href: "\/brands\/palmo",
+      thumbnailUrl: null,
+      translates: [
+        {
+          post_id: "735",
+          lang: "fa",
+          title: "\u067e\u0627\u0644\u0645\u0648",
+        },
+      ],
+      thumbnail_attachment: null,
+    },
+    {
+      id: 765,
+      user_id: "1",
+      slug: "picaso",
+      title: "\u067e\u06cc\u06a9\u0627\u0633\u0648",
+      thumbnail: null,
+      post_type: "brands",
+      status: "1",
+      published_at: null,
+      deleted_at: null,
+      created_at: "2022-05-24T00:36:16.000000Z",
+      updated_at: "2022-05-24T00:36:16.000000Z",
+      href: "\/brands\/picaso",
+      thumbnailUrl: null,
+      translates: [
+        {
+          post_id: "765",
+          lang: "fa",
+          title: "\u067e\u06cc\u06a9\u0627\u0633\u0648",
+        },
+      ],
+      thumbnail_attachment: null,
+    },
+    {
+      id: 880,
+      user_id: "1",
+      slug: "sib",
+      title: "\u0633\u06cc\u0628",
+      thumbnail: null,
+      post_type: "brands",
+      status: "1",
+      published_at: null,
+      deleted_at: null,
+      created_at: "2022-05-24T00:36:17.000000Z",
+      updated_at: "2022-05-24T00:36:17.000000Z",
+      href: "\/brands\/sib",
+      thumbnailUrl: null,
+      translates: [
+        {
+          post_id: "880",
+          lang: "fa",
+          title: "\u0633\u06cc\u0628",
+        },
+      ],
+      thumbnail_attachment: null,
+    },
+    {
+      id: 3555,
+      user_id: "1",
+      slug: "toto",
+      title: "\u062a\u0648\u062a\u0648",
+      thumbnail: null,
+      post_type: "brands",
+      status: "1",
+      published_at: null,
+      deleted_at: null,
+      created_at: "2022-08-03T17:07:00.000000Z",
+      updated_at: "2022-08-03T17:07:00.000000Z",
+      href: "\/brands\/toto",
+      thumbnailUrl: null,
+      translates: [
+        {
+          post_id: "3555",
+          lang: "fa",
+          title: "\u062a\u0648\u062a\u0648",
+        },
+      ],
+      thumbnail_attachment: null,
+    },
+    {
+      id: 5416,
+      user_id: "1",
+      slug: "\u0622\u0631\u062a-\u0644\u0627\u06cc\u0646",
+      title: "\u0622\u0631\u062a \u0644\u0627\u06cc\u0646",
+      thumbnail: null,
+      post_type: "brands",
+      status: "0",
+      published_at: null,
+      deleted_at: null,
+      created_at: "2023-06-20T07:07:49.000000Z",
+      updated_at: "2023-06-20T07:07:49.000000Z",
+      href: "\/brands\/\u0622\u0631\u062a-\u0644\u0627\u06cc\u0646",
+      thumbnailUrl: null,
+      translates: [
+        {
+          post_id: "5416",
+          lang: "fa",
+          title: "\u0622\u0631\u062a \u0644\u0627\u06cc\u0646",
+        },
+      ],
+      thumbnail_attachment: null,
+    },
+    {
+      id: 5417,
+      user_id: "1",
+      slug: "\u0644\u0648\u06a9\u06cc",
+      title: "\u0644\u0648\u06a9\u06cc",
+      thumbnail: null,
+      post_type: "brands",
+      status: "0",
+      published_at: null,
+      deleted_at: null,
+      created_at: "2023-06-20T07:08:12.000000Z",
+      updated_at: "2023-06-20T07:08:12.000000Z",
+      href: "\/brands\/\u0644\u0648\u06a9\u06cc",
+      thumbnailUrl: null,
+      translates: [
+        {
+          post_id: "5417",
+          lang: "fa",
+          title: "\u0644\u0648\u06a9\u06cc",
+        },
+      ],
+      thumbnail_attachment: null,
+    },
+  ],
+  categories: [
+    {
+      id: 265,
+      post_type: "organizationOrders",
+      slug: "\u0645\u062f\u0627\u062f-\u0631\u0646\u06af\u06cc",
+      title: "\u0645\u062f\u0627\u062f \u0631\u0646\u06af\u06cc",
+      serp_title: null,
+      excerpt: null,
+      content: null,
+      image: null,
+      data: null,
+      lang: "fa",
+      parent: null,
+      created_at: "2023-06-20T06:59:00.000000Z",
+      updated_at: "2023-06-20T07:00:01.000000Z",
+      href: "categories\/organizationOrders\/\u0645\u062f\u0627\u062f-\u0631\u0646\u06af\u06cc",
+      translates: [
+        {
+          category_id: "265",
+          lang: "fa",
+          title: "\u0645\u062f\u0627\u062f \u0631\u0646\u06af\u06cc",
+        },
+      ],
+      attributes: [
+        {
+          id: 45,
+          title: "\u062a\u0639\u062f\u0627\u062f \u0631\u0646\u06af",
+          description: ".",
+          icon: null,
+          type: "category",
+          lang: "fa",
+          parent: null,
+          created_at: "2023-06-20T06:59:53.000000Z",
+          updated_at: "2023-06-20T07:01:24.000000Z",
+          pivot: {
+            category_id: "265",
+            attribute_id: "45",
+          },
+          keys: [
+            {
+              id: 149,
+              title: "6 \u0631\u0646\u06af",
+              description: "",
+              icon: null,
+              lang: "fa",
+              parent: null,
+              created_at: "2023-06-20T06:59:21.000000Z",
+              updated_at: "2023-06-20T06:59:21.000000Z",
+              pivot: {
+                attribute_id: "45",
+                attribute_key_id: "149",
+              },
+              translates: [
+                {
+                  attribute_key_id: "149",
+                  lang: "fa",
+                  title: "6 \u0631\u0646\u06af",
+                  description: null,
+                },
+              ],
+            },
+            {
+              id: 150,
+              title: "12 \u0631\u0646\u06af",
+              description: "",
+              icon: null,
+              lang: "fa",
+              parent: null,
+              created_at: "2023-06-20T06:59:26.000000Z",
+              updated_at: "2023-06-20T06:59:26.000000Z",
+              pivot: {
+                attribute_id: "45",
+                attribute_key_id: "150",
+              },
+              translates: [
+                {
+                  attribute_key_id: "150",
+                  lang: "fa",
+                  title: "12 \u0631\u0646\u06af",
+                  description: null,
+                },
+              ],
+            },
+            {
+              id: 151,
+              title: "24 \u0631\u0646\u06af",
+              description: "",
+              icon: null,
+              lang: "fa",
+              parent: null,
+              created_at: "2023-06-20T06:59:30.000000Z",
+              updated_at: "2023-06-20T06:59:30.000000Z",
+              pivot: {
+                attribute_id: "45",
+                attribute_key_id: "151",
+              },
+              translates: [
+                {
+                  attribute_key_id: "151",
+                  lang: "fa",
+                  title: "24 \u0631\u0646\u06af",
+                  description: null,
+                },
+              ],
+            },
+            {
+              id: 152,
+              title: "36 \u0631\u0646\u06af",
+              description: "",
+              icon: null,
+              lang: "fa",
+              parent: null,
+              created_at: "2023-06-20T06:59:38.000000Z",
+              updated_at: "2023-06-20T06:59:38.000000Z",
+              pivot: {
+                attribute_id: "45",
+                attribute_key_id: "152",
+              },
+              translates: [
+                {
+                  attribute_key_id: "152",
+                  lang: "fa",
+                  title: "36 \u0631\u0646\u06af",
+                  description: null,
+                },
+              ],
+            },
+          ],
+          translates: [
+            {
+              attribute_id: "45",
+              lang: "fa",
+              title: "\u062a\u0639\u062f\u0627\u062f \u0631\u0646\u06af",
+              description: ".",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  organizations: [
+    {
+      id: 1,
+      title: "\u0645\u0647\u062f\u06a9\u0648\u062f\u06a9",
+    },
+    {
+      id: 2,
+      title: "\u0645\u062f\u0631\u0633\u0647",
+    },
+    {
+      id: 3,
+      title: "\u0633\u0627\u0632\u0645\u0627\u0646",
+    },
+    {
+      id: 4,
+      title: "\u0633\u0627\u06cc\u0631",
+    },
+  ],
+};
 
+const mockArray = ["", "", "", "", "", ""];
+const selectedOption = ref(null);
+const attrSelectedOption = ref(null);
 function toggleActive() {
   toggleLoginSection.value = !toggleLoginSection.value;
 }
+function getAllData() {
+  const response = axios.get(
+    "https://api.aryaland.ir/v1/aryaland/digital-list"
+  );
+  console.log(response);
+}
+
+onMounted(() => {
+  getAllData();
+  console.log("somthing");
+});
+
 const toggleProduct = () => {
   toggleProductsSection.value = !toggleProductsSection.value;
-  productEl.classList.toggle("hide");
+  console.log(mockData);
 };
 
 const incVal = () => {
@@ -327,7 +515,6 @@ body {
 }
 
 #product {
-  height: 190px;
   transition: all 0.5s;
 }
 
@@ -372,41 +559,41 @@ body {
 }
 .products-btn-add {
   width: 100%;
-  background-color: rgb(8, 128, 8);
+  background-color: white;
+  border: 2px solid rgb(0, 168, 0);
+  border-radius: 0.4rem;
+  cursor: pointer;
 }
 .products-btn-add:hover {
   width: 100%;
-  background-color: rgb(9, 92, 9);
+  background-color: rgb(206, 206, 206);
 }
 .btn-red {
-  background-color: rgb(199, 20, 20);
+  height: 2.5rem;
+  background-color: white;
+  border: 2px solid rgb(168, 0, 0);
+  border-radius: 0.4rem;
+  cursor: pointer;
 }
 
 .btn-green {
-  background-color: green;
+  height: 2.5rem;
+  background-color: white;
+  border: 2px solid rgb(0, 168, 0);
+  border-radius: 0.4rem;
+  cursor: pointer;
 }
 
-.products-btn i {
-  transition: 0.5s;
-}
-
-.products-btn.active i {
-  transform: rotate(90deg);
-}
-
-.products-btn:hover {
+/* .products-btn:hover {
   background-color: RoyalBlue;
-}
-.products-btn-add:hover {
-  width: 100%;
-  background-color: rgb(9, 92, 9);
-}
+} */
+
 .btn-red:hover {
-  background-color: rgb(165, 20, 20);
+  background-color: rgb(206, 206, 206);
 }
 
 .btn-green:hover {
-  background-color: rgb(2, 107, 2);
+  background-color: rgb(206, 206, 206);
 }
 
 .flex {
@@ -433,6 +620,32 @@ h1 {
   border-radius: 5px;
 }
 
+.product-label {
+  position: absolute;
+  display: block;
+  font-size: 15px;
+  color: #333333;
+  right: 1.4rem;
+  bottom: 3.3rem;
+  padding: 0px 6px;
+  background: white;
+  border-radius: 5px;
+  right: 4.6rem;
+  bottom: 2.2rem;
+}
+.product-select-box-label {
+  position: absolute;
+  display: block;
+  font-size: 15px;
+  color: #333333;
+  bottom: 3.3rem;
+  padding: 0px 6px;
+  background: white;
+  border-radius: 5px;
+  right: 1rem;
+  bottom: 2.2rem;
+}
+
 /* input[type="text"],
 input[type="password"]  */
 .login-input {
@@ -444,6 +657,17 @@ input[type="password"]  */
   border: 1px solid #41301e6b;
   height: 44px;
   line-height: 44px;
+}
+.products-input {
+  width: 70%;
+  border-radius: 5px;
+  /* border: none; */
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #41301e6b;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
 }
 
 .login-input:focus {
@@ -468,6 +692,30 @@ input[type="submit"] {
   display: flex;
   position: relative;
   margin: 1rem 0;
+}
+.products-input-label-container {
+  display: flex;
+  height: 3rem;
+  position: relative;
+  margin: 1.3rem 0;
+}
+
+.select-box {
+  width: 100%;
+  line-height: 44px;
+  height: 50px;
+  text-align: center;
+  border-radius: 0.4rem;
+  border-color: #41301e6b;
+  margin: 0.3rem 0;
+}
+
+.footer-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
